@@ -1,5 +1,7 @@
+import Link from "next/link";
 import Card from "../ui/Card/Card"
 import styles from '../ui/Card/card.module.css';
+import { AppLink } from "../ui/AppLink/AppLink";
 
 const comics = [
     {
@@ -67,9 +69,12 @@ const comics = [
 export default function Catalog() {
     return (
         <div className={styles.cardGrid}>
-            {comics.map(({ id, title, image }) => (
-                <Card key={id} id={id} title={title} image={image} />
-            ))}
+                {comics.map(({ id, title, image }) => (
+                <AppLink href="/comic/omniscient-readers-viewpoint/chapter-1" >
+
+                    <Card key={id} title={title} image={image} />
+                </AppLink>
+                ))}
         </div>
     );
 }

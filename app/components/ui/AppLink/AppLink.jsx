@@ -1,3 +1,4 @@
+'use client';
 import Link from "next/link";
 
 export function AppLink({
@@ -14,6 +15,7 @@ export function AppLink({
         <Link
             href={href}
             className={className}
+            onClick={onClick}
             {...rest}
         >
             {children}
